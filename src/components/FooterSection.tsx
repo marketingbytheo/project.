@@ -9,8 +9,8 @@ const footerLinks = [
 
 const FooterSection = () => {
   return (
-    <footer className="bg-background border-t border-border section-padding py-8 sm:py-10 md:py-12">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
+    <footer className="bg-background border-t border-border section-padding py-10 sm:py-10 md:py-12">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-8">
         <Link to="/" className="font-display font-bold text-lg sm:text-xl tracking-tight text-foreground shrink-0 order-2 sm:order-1">
           STUDIO<span className="text-primary">.</span>
         </Link>

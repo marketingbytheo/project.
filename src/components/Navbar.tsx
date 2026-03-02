@@ -45,31 +45,31 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile toggle - samo ispod sm */}
+        {/* Mobile toggle - veća tap zona */}
         <button
           onClick={() => setOpen(!open)}
-          className="sm:hidden text-foreground p-2 -m-2 touch-manipulation"
-          aria-label="Toggle menu"
+          className="sm:hidden text-foreground p-3 -m-2 touch-manipulation rounded-lg active:bg-muted/80 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+          aria-label={open ? "Zatvori izbornik" : "Otvori izbornik"}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} strokeWidth={2} /> : <Menu size={22} strokeWidth={2} />}
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - puna širina, više zraka, suptilna podloga */}
       {open && (
-        <div className="sm:hidden bg-background border-b border-border section-padding pb-6 pt-2">
-          <ul className="flex flex-col gap-4">
+        <div className="sm:hidden bg-muted/40 backdrop-blur-sm border-b border-border section-padding py-6 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)]">
+          <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.label}>
                 {isActive(link.href) ? (
-                  <span className="text-sm font-medium text-primary cursor-default uppercase tracking-wide">
+                  <span className="block py-3.5 px-3 text-sm font-semibold text-primary uppercase tracking-wide rounded-lg bg-primary/10">
                     {link.label}
                   </span>
                 ) : (
                   <Link
                     to={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors uppercase tracking-wide"
+                    className="block py-3.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/60 active:bg-muted rounded-lg transition-colors uppercase tracking-wide"
                   >
                     {link.label}
                   </Link>

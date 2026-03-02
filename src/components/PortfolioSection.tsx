@@ -21,7 +21,7 @@ const PortfolioSection = () => {
         Odabrani Radovi
       </motion.p>
       <motion.h2
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10 sm:mb-12 md:mb-16 max-w-xl"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 sm:mb-12 md:mb-16 max-w-xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -30,17 +30,17 @@ const PortfolioSection = () => {
         Istaknuti Projekti
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-5 md:gap-6">
         {projects.map((project, i) => (
           <motion.div
             key={project.title}
-            className="group relative overflow-hidden cursor-pointer"
+            className="group relative overflow-hidden cursor-pointer rounded-lg sm:rounded-none shadow-[0_4px_16px_rgba(0,0,0,0.06)] sm:shadow-none"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
           >
-            <div className="aspect-[4/5] overflow-hidden">
+            <div className="aspect-[4/5] overflow-hidden rounded-lg sm:rounded-none">
               <img
                 src={project.img}
                 alt={project.title}

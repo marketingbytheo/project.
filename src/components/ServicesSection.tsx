@@ -18,7 +18,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="bg-background section-padding pt-4 sm:pt-6 md:pt-8 lg:pt-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-32">
+    <section id="services" className="bg-background section-padding pt-10 sm:pt-6 md:pt-8 lg:pt-12 pb-14 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-32">
       <motion.p
         className="text-xs sm:text-sm uppercase tracking-widest text-primary font-medium mb-3 sm:mb-4"
         initial={{ opacity: 0 }}
@@ -28,7 +28,7 @@ const ServicesSection = () => {
         Što Radimo
       </motion.p>
       <motion.h2
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10 sm:mb-12 md:mb-16 max-w-xl"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 sm:mb-12 md:mb-16 max-w-xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -37,18 +37,20 @@ const ServicesSection = () => {
         Usluge
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="group border border-border p-6 sm:p-8 md:p-10 lg:p-14 transition-colors hover:border-primary"
+            className="group border border-border p-6 sm:p-8 md:p-10 lg:p-14 transition-all hover:border-primary bg-muted/30 sm:bg-transparent rounded-sm sm:rounded-none shadow-[0_2px_12px_rgba(0,0,0,0.04)] sm:shadow-none"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
           >
-            <service.icon className="w-7 h-7 sm:w-8 sm:h-8 text-foreground mb-4 sm:mb-6 group-hover:text-primary transition-colors" />
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">{service.title}</h3>
+            <div className="w-12 h-12 sm:w-auto sm:h-auto flex items-center justify-center rounded-lg bg-primary/10 sm:bg-transparent mb-4 sm:mb-6">
+              <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary sm:text-foreground group-hover:text-primary transition-colors" />
+            </div>
+            <h3 className="text-lg sm:text-2xl font-bold text-foreground mb-2 sm:mb-4">{service.title}</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
