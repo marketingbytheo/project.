@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 const footerLinks = [
-  { label: "Naslovna", href: "/", isRoute: true },
-  { label: "Usluge", href: "/usluge", isRoute: true },
-  { label: "O Nama", href: "/o-nama", isRoute: true },
-  { label: "Kontakt", href: "/kontakt", isRoute: true },
+  { label: "Naslovna", href: "/" },
+  { label: "Usluge", href: "/usluge" },
+  { label: "O Nama", href: "/o-nama" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const FooterSection = () => {
@@ -18,21 +18,12 @@ const FooterSection = () => {
         <ul className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-5 md:gap-6 order-1 sm:order-2">
           {footerLinks.map((link) => (
             <li key={link.label}>
-              {link.isRoute ? (
-                <Link
-                  to={link.href}
-                  className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  href={link.href}
-                  className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide"
-                >
-                  {link.label}
-                </a>
-              )}
+              <Link
+                to={link.href}
+                className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wide"
+              >
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>
