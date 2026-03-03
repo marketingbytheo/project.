@@ -40,7 +40,7 @@ const FooterSection = () => {
 
       <div className="mt-8 sm:mt-10 text-center">
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Studio. Sva prava pridržana.
+          © {new Date().getFullYear()} Studio<span className="text-primary">.</span> Sva prava pridržana.
         </p>
       </div>
     </footer>
