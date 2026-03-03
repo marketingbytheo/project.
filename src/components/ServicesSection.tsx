@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, ShoppingCart } from "lucide-react";
+import { Monitor, ShoppingCart, BarChart2, Megaphone } from "lucide-react";
 
 const services = [
   {
@@ -13,6 +13,18 @@ const services = [
     title: "E-Trgovina",
     description:
       "Prilagođene online trgovine izrađene za performanse, skalabilnost i besprijekorno iskustvo kupovine na svakom uređaju.",
+  },
+  {
+    icon: BarChart2,
+    title: "Google Ads",
+    description:
+      "Kampanje na Google pretraživanju i mreži Displaya. Povećavamo vidljivost, dovodimo kvalitetan promet i pratimo rezultate putem podataka.",
+  },
+  {
+    icon: Megaphone,
+    title: "Meta Ads",
+    description:
+      "Oglašavanje na Facebooku i Instagramu. Ciljane kampanje prema vašoj publici za veću prepoznatljivost brenda i prodaju.",
   },
 ];
 
